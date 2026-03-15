@@ -1,0 +1,20 @@
+.navbar {
+    padding: 0 !important;
+}
+  
+.nav-link {
+    color: #000000 !important;
+    transition: color 0.2s;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    margin-right: 1.5rem !important;
+}
+  
+.nav-link:hover {
+    color: #0d6efd !important;
+}
+  
+.active-nav-link {
+    border-bottom: 3px solid #0d6efd !important;
+    font-weight: 500 !important;
+}

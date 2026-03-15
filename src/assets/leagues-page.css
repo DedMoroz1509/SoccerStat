@@ -1,0 +1,31 @@
+.leagues-page {
+    background-color: #e9ecef;
+    min-height: 100vh;
+}
+  
+.leagues-container {
+    padding-top: 1.5rem;
+}
+  
+.cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+  
+.card-wrapper {
+    width: 270px;
+    flex: 0 0 auto;
+}
+  
+.loading-spinner {
+    text-align: center;
+    padding: 3rem 0;
+}
+  
+.loading-text {
+    margin-top: 0.5rem;
+    color: #6c757d;
+}
