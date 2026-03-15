@@ -1,6 +1,5 @@
 import { Container, Navbar, Nav } from 'react-bootstrap';
 import { Link, useLocation } from 'react-router-dom';
-import '../assets/header.css';
 
 function Header() {
   const location = useLocation();

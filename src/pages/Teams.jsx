@@ -1,13 +1,14 @@
 import { useEffect, useState } from 'react';
 import { Container } from 'react-bootstrap';
-import { getCompetitions } from '../services/api';
-import LeagueCard from '../components/LeagueCard';
+import { getTeams } from '../services/api';
+import TeamCard from '../components/TeamCard';
 import Search from '../components/Search';
 import AlertMessage from '../components/AlertMessage';
 import Footer from '../components/Footer';
+import '../assets/leagues-page.css';
 
-function Leagues() {
-  const [leagues, setLeagues] = useState([]);
+function Teams() {
+  const [teams, setTeams] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [searchQuery, setSearchQuery] = useState('');
@@ -16,32 +17,32 @@ function Leagues() {
   const itemsPerPage = 16; 
 
   useEffect(() => {
-    const loadLeagues = async () => {
+    const loadTeams = async () => {
       try {
         setLoading(true);
         setError(null);
-        const data = await getCompetitions();
-        setLeagues(data.competitions || []);
+        const data = await getTeams();
+        setTeams(data.teams || []);
       } catch (err) {
-        setError(err.message || 'Не удалось загрузить список лиг');
+        setError(err.message || 'Не удалось загрузить список команд');
       } finally {
         setLoading(false);
       }
     };
-    loadLeagues();
+    loadTeams();
   }, []);
 
-  const filteredLeagues = leagues.filter(league => {
-    const name = league.name?.toLowerCase() || '';
-    const country = league.area?.name?.toLowerCase() || '';
+  const filteredTeams = teams.filter(team => {
+    const name = team.name?.toLowerCase() || '';
+    const country = team.area?.name?.toLowerCase() || '';
     const query = searchQuery.toLowerCase();
     return name.includes(query) || country.includes(query);
   });
 
-  const totalPages = Math.ceil(filteredLeagues.length / itemsPerPage);
+  const totalPages = Math.ceil(filteredTeams.length / itemsPerPage);
   const startIndex = (currentPage - 1) * itemsPerPage;
   const endIndex = startIndex + itemsPerPage;
-  const currentLeagues = filteredLeagues.slice(startIndex, endIndex);
+  const currentTeams = filteredTeams.slice(startIndex, endIndex);
 
   useEffect(() => {
     setCurrentPage(1);
@@ -53,7 +54,7 @@ function Leagues() {
   };
 
   return (
-    <div className="leagues-page">
+    <div className="leagues-page"> 
       <Container className="leagues-container">
         <div className="d-flex justify-content-center mb-4">
           <div className="search-wrapper">
@@ -72,11 +73,11 @@ function Leagues() {
             <div className="spinner-border text-primary" role="status">
               <span className="visually-hidden">Загрузка...</span>
             </div>
-            <p className="loading-text">Загрузка лиг...</p>
+            <p className="loading-text">Загрузка команд...</p>
           </div>
         ) : (
           <>
-            {!error && filteredLeagues.length === 0 ? (
+            {!error && filteredTeams.length === 0 ? (
               <AlertMessage 
                 variant="info" 
                 message="Ничего не найдено" 
@@ -84,14 +85,14 @@ function Leagues() {
             ) : (
               <>
                 <div className="cards-container">
-                  {currentLeagues.map(league => (
-                    <div key={league.id} className="card-wrapper">
-                      <LeagueCard league={league} />
+                  {currentTeams.map(team => (
+                    <div key={team.id} className="card-wrapper">
+                      <TeamCard team={team} />
                     </div>
                   ))}
                 </div>
 
-                {filteredLeagues.length > 0 && (
+                {filteredTeams.length > 0 && (
                   <Footer
                     showPagination={true}
                     currentPage={currentPage}
@@ -108,4 +109,4 @@ function Leagues() {
   );
 }
 
-export default Leagues;
+export default Teams;
