@@ -1,0 +1,45 @@
+.date-filter-wrapper {
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+  padding: 0;
+}
+  
+.date-filter-content {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+  
+.filter-label {
+  color: #212529;
+  font-size: 0.95rem;
+  white-space: nowrap;
+}
+  
+.filter-input {
+  width: auto !important;
+  min-width: 250px;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  padding: 0.375rem 0.75rem;
+  height: auto;
+  font-size: 0.95rem;
+  background-color: #fff;
+}
+  
+.filter-input:focus {
+  border-color: #cbddf8;
+  outline: 0;
+  box-shadow: 0 0 0 0.25rem rgba(177, 201, 237, 0.25);
+}
+  
+@media (max-width: 576px) {
+  .date-filter-content {
+    gap: 0.5rem;
+  }
+    
+  .filter-input {
+    min-width: 120px;
+  }
+}

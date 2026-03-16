@@ -1,50 +1,50 @@
 .team-card {
-    border-radius: 12px;
-    aspect-ratio: 1/1;
-    cursor: pointer;
-    transition: transform 0.2s, box-shadow 0.2s;
-    border: none;
-    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
-  }
+  border-radius: 12px;
+  aspect-ratio: 1/1;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  border: none;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
+}
   
-  .team-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
-  }
+.team-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+}
   
-  .team-card-body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 0.5rem;
-  }
+.team-card-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.5rem;
+}
   
-  .team-card-logo-wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 170px;
-    width: 170px;
-    margin-top: 8px;
-    margin-bottom: 0.5rem;
-  }
+.team-card-logo-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 170px;
+  width: 170px;
+  margin-top: 8px;
+  margin-bottom: 0.5rem;
+}
   
-  .team-card-logo {
-    min-height: 80%;
-    min-width: 80%;
-    object-fit: contain;
-  }
+.team-card-logo {
+  min-height: 80%;
+  min-width: 80%;
+  object-fit: contain;
+}
   
-  .team-card-title {
-    font-size: 0.9rem;
-    font-weight: bold;
-    margin-bottom: 0;
-    text-align: center;
-  }
+.team-card-title {
+  font-size: 0.9rem;
+  font-weight: bold;
+  margin-bottom: 0;
+  text-align: center;
+}
   
-  .team-card-footer {
-    margin-top: auto;
-    width: 100%;
-    text-align: center;
-    padding-bottom: 0.5rem;
-  }
+.team-card-footer {
+  margin-top: auto;
+  width: 100%;
+  text-align: center;
+  padding-bottom: 0.5rem;
+}
