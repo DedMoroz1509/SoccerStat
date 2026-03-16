@@ -1,6 +1,6 @@
 import { Container, Navbar, Nav } from 'react-bootstrap';
 import { Link, useLocation } from 'react-router-dom';
-
+import Logo from '../assets/FIFA_logo_without_slogan.svg.png';
 function Header() {
   const location = useLocation();
   
@@ -9,7 +9,7 @@ function Header() {
       <Container>
         <div className="d-flex align-items-center me-4">
           <img
-            src="src\assets\FIFA_logo_without_slogan.svg.png"
+            src={Logo}
             alt="FIFA"
             height="30"
             className="d-inline-block align-top"
