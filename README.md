@@ -1,3 +1,3 @@
 # SoccerStat
 
-Test case SimbirSoft
+Test case

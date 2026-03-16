@@ -1,0 +1,12 @@
+.matches-list {
+  margin-top: 1.5rem;
+  margin-bottom: 2rem;
+}
+    
+.matches-list .match-card {
+  margin-bottom: 0.75rem;
+}
+  
+.matches-list .match-card:last-child {
+  margin-bottom: 0;
+}
