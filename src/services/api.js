@@ -25,6 +25,25 @@ const fetchData = async (endpoint) => {
 };
 
 export const getCompetitions = () => fetchData('/competitions');
+export const getLeagueById = (leagueId) => fetchData(`/competitions/${leagueId}`); 
+export const getLeagueMatches = (leagueId, dateFrom, dateTo) => {
+  let endpoint = `/competitions/${leagueId}/matches`;
+  
+  if (dateFrom && dateTo) {
+    endpoint += `?dateFrom=${dateFrom}&dateTo=${dateTo}`;
+  }
+  
+  return fetchData(endpoint);
+};
+
 export const getTeams = () => fetchData('/teams');
-export const getLeagueMatches = (leagueId) => fetchData(`/competitions/${leagueId}/matches`);
-export const getTeamMatches = (teamId) => fetchData(`/teams/${teamId}/matches`);
+export const getTeamById = (teamId) => fetchData(`/teams/${teamId}`); 
+export const getTeamMatches = (teamId, dateFrom, dateTo) => {
+  let endpoint = `/teams/${teamId}/matches`;
+  
+  if (dateFrom && dateTo) {
+    endpoint += `?dateFrom=${dateFrom}&dateTo=${dateTo}`;
+  }
+  
+  return fetchData(endpoint);
+};

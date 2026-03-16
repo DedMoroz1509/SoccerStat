@@ -5,7 +5,6 @@ import TeamCard from '../components/TeamCard';
 import Search from '../components/Search';
 import AlertMessage from '../components/AlertMessage';
 import Footer from '../components/Footer';
-import '../assets/leagues-page.css';
 
 function Teams() {
   const [teams, setTeams] = useState([]);

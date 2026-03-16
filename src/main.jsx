@@ -8,6 +8,10 @@ import './assets/league-card.css';
 import './assets/leagues-page.css';
 import './assets/search.css';
 import './assets/team-card.css';
+import './assets/breadcrumbs.css';
+import './assets/date-filter.css';
+import './assets/match-card.css';
+import './assets/pagination.css';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
