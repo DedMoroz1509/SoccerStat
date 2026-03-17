@@ -1,5 +1,5 @@
 const BASE_URL = import.meta.env.PROD 
-  ? 'https://api.football-data.org' 
+  ? 'https://api.football-data.org/v4' 
   : '/api';
 const HEADERS = {
   'X-Auth-Token': import.meta.env.VITE_FOOTBALL_DATA_API_KEY
